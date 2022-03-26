@@ -1,13 +1,11 @@
-
 .container {
   display: flex;
   flex-direction: row;
   margin: $gutter-md 0;
 
   .imageContainer {
-    @include breakpoint($until: 'medium') {
+    @include breakpoint($until: 'tablet') {
       position: absolute;
     }
   }
 }
-

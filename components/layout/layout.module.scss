@@ -1,7 +1,7 @@
 @import 'styles/variables';
 
 .mainContainer {
-  @include breakpoint('small') {
+  @include breakpoint($from: 'tablet') {
     padding: $gutter-md;
   }
   background-color: $color-bg;

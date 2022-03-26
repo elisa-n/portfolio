@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Layout from '../components/layout';
-import PageSection from '../components/pageSection';
-import PageSection2 from '../components/pageSection2';
+import Layout from '../components/layout/layout';
+import ContentSection from '../components/contentSection/contentSection';
+import PageSection2 from '../components/contentSection/pageSection2';
 import { indexQuery } from '../utils/queries';
 import { getClient, overlayDrafts } from '../utils/sanity.server';
 
@@ -33,7 +33,11 @@ export default function Index({ allPosts, preview }: IndexProps) {
         <Head>
           <title>Elisa</title>
         </Head>
-        <PageSection img="/images/profile.jpg" alt="elisa" title="Me, hello!">
+        <ContentSection
+          img="/images/profile.jpg"
+          alt="elisa"
+          title="Me, hello!"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -41,7 +45,7 @@ export default function Index({ allPosts, preview }: IndexProps) {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
-        </PageSection>
+        </ContentSection>
         <PageSection2 img="/images/profile.jpg" alt="elisa" title="Me, hello!">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

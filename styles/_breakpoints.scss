@@ -1,9 +1,8 @@
-
 $breakpoints: (
-  'small':  767px,
-  'medium': 992px,
-  'large':  1200px,
-  'xlarge': 1600px
+  'phone': 690px,
+  'tablet': 992px,
+  'desktop': 1200px,
+  'large-desktop': 1600px,
 ) !default;
 
 // From is inclusive, until exclusive
@@ -15,7 +14,9 @@ $breakpoints: (
     @if map-has-key($breakpoints, $from) {
       $query: '(min-width: #{map-get($breakpoints, $from)})';
     }
-    @if type-of($from) == number { $query: '(min-width: #{$from}px)'; }
+    @if type-of($from) == number {
+      $query: '(min-width: #{$from}px)';
+    }
   }
 
   @if $from and $until {
@@ -26,8 +27,12 @@ $breakpoints: (
     @if map-has-key($breakpoints, $until) {
       $query: '#{$query} (max-width: #{calc(map-get($breakpoints, $until) - 1px)})';
     }
-    @if type-of($until) == number { $query: '#{$query} (max-width: #{calc($until - 1)}px)'; }
+    @if type-of($until) == number {
+      $query: '#{$query} (max-width: #{calc($until - 1)}px)';
+    }
   }
 
-    @media #{$query} { @content; }
+  @media #{$query} {
+    @content;
+  }
 }

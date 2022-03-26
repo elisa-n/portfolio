@@ -1,7 +1,7 @@
-import TextContainer from './textContainer';
-import SmallImage from './smallImage';
+import TextContainer from '../textContainer/textContainer';
+import SmallImage from '../image/smallImage';
 
-import styles from './pageSection.module.scss';
+import styles from './contentSection.module.scss';
 
 interface SectionProps {
   alt: string;
@@ -10,7 +10,7 @@ interface SectionProps {
   title: string;
 }
 
-export default function PageSection({
+export default function ContentSection({
   img,
   alt,
   children,
