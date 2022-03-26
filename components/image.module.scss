@@ -1,0 +1,10 @@
+.imageContainer {
+  display: flex;
+  flex-shrink: 0;
+  box-shadow: $img-shadow;
+  height: $img-size-sm;
+  width: $img-size-sm;
+  margin-right: $img-margin;
+  margin-top: $img-margin;
+  position: relative;
+}

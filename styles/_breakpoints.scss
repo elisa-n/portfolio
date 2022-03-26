@@ -1,0 +1,33 @@
+
+$breakpoints: (
+  'small':  767px,
+  'medium': 992px,
+  'large':  1200px,
+  'xlarge': 1600px
+) !default;
+
+// From is inclusive, until exclusive
+// Refrain from using number values if not absolutely required
+@mixin breakpoint($from: false, $until: false) {
+  $query: '';
+
+  @if $from {
+    @if map-has-key($breakpoints, $from) {
+      $query: '(min-width: #{map-get($breakpoints, $from)})';
+    }
+    @if type-of($from) == number { $query: '(min-width: #{$from}px)'; }
+  }
+
+  @if $from and $until {
+    $query: '#{$query} and';
+  }
+
+  @if $until {
+    @if map-has-key($breakpoints, $until) {
+      $query: '#{$query} (max-width: #{calc(map-get($breakpoints, $until) - 1px)})';
+    }
+    @if type-of($until) == number { $query: '#{$query} (max-width: #{calc($until - 1)}px)'; }
+  }
+
+    @media #{$query} { @content; }
+}

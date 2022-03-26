@@ -1,0 +1,33 @@
+@import './variables.scss';
+@import './breakpoints.scss';
+
+html, body {
+  background-color: $color-bg-margins;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: $noto, Arial, Helvetica, sans-serif ;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+h1 {
+  font-size: $fs-header;
+  margin: 0;
+}
+
+a {
+  color: $color-link;
+}
+
+p {
+  margin: 0;
+}

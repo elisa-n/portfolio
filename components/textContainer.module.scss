@@ -1,0 +1,21 @@
+
+.container {
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  margin-right: $gutter-md;
+  flex: 1;
+}
+
+.sectionContent {
+  background-color: $color-section-text-bg;
+  font-size: $fs-body;
+  line-height: 2;
+  padding: $section-content-padding;
+}
+
+.sectionTitle {
+  font-family: $font-heading;
+  font-size: $fs-lg;
+  height: $img-margin;
+}

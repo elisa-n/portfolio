@@ -1,0 +1,16 @@
+.footer {
+  align-items: center;
+  background-color: $color-footer-bg;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 2;
+  padding: $gutter-md $gutter-xl;
+}
+
+.separator {
+  border-top: 3px solid $color-footer-separator;
+  margin-bottom: $gutter-sm;
+  width: 100%;
+}

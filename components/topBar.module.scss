@@ -1,0 +1,13 @@
+
+.animationToggle{
+  appearance: none;
+  border: none;
+  background-color: $color-topbar-bg;
+  color: $color-link;
+}
+
+.topBar {
+  display: flex;
+  justify-content: flex-end;
+  height: 2rem;
+}

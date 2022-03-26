@@ -1,0 +1,56 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './breakpoints.scss';
+
+// Fonts:
+$font-heading: $alata;
+
+$fs14: 0.875rem;
+$fs16: 1rem;
+$fs24: 1.5rem;
+$fs32: 2rem;
+$fs64: 4rem;
+
+$fs-sm: $fs14;
+$fs-md: $fs16;
+$fs-lg: $fs24;
+$fs-xl: $fs32;
+$fs-xxl: $fs64;
+
+$fs-body: $fs16;
+$fs-header: $fs-xxl;
+$fs-subheader: $fs-lg;
+
+// Spacings
+$space: $fs-body;
+$space-double: 2 * $space;
+$space-triple: 3 * $space;
+$space-quadruple: 4 * $space;
+
+// Gutters
+$gutter-sm: $space;
+$gutter-md: $space-double;
+$gutter-lg: $space-triple;
+$gutter-xl: $space-quadruple;
+
+
+// Layout
+$main-width: 75rem; //1200px
+
+// Components
+
+//Header-shapes
+$trapezoid-slope-width: 16rem;
+$triangleHeight: 4rem;
+$triangleWidth: 4rem;
+
+$header-height: 16rem;
+$header-img-width: 30rem;
+$header-padding: $space-double;
+
+$section-content-padding: $gutter-sm $gutter-md;
+
+$img-size-sm: 12.5rem;
+$img-shadow-size: $space-double;
+$img-shadow: $space-double (-$space-double) 0 $color-img-shadow;
+$img-margin: $img-shadow-size;
