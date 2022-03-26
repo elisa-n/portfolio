@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import styles from './image.module.scss';
-import sectionStyles from './pageSection.module.scss';
+import sectionStyles from '../contentSection/contentSection.module.scss';
 
 interface ImgProps {
   alt: string;
