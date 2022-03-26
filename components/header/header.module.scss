@@ -1,5 +1,8 @@
-
 .header {
+  @include breakpoint($until: 'phone') {
+    height: $header-height--mobile;
+  }
+
   align-items: center;
   color: $color-header-text;
   display: flex;
@@ -11,10 +14,16 @@
 }
 
 .headerImageContainer {
-  height: $header-height;
+  @include breakpoint($until: 'phone') {
+    min-width: $header-img-width--mobile;
+    width: $header-img-width--mobile;
+  }
+
+  height: 100%;
+  min-width: $header-img-width;
   width: $header-img-width;
   position: relative;
-  left:0;
+  left: 0;
 }
 
 .titleContainer {
@@ -27,6 +36,10 @@
 }
 
 .title {
+  @include breakpoint($until: 'phone') {
+    font-size: $fs-header--mobile;
+  }
+
   display: flex;
   flex: 2;
   font-size: $fs-header;
@@ -34,16 +47,23 @@
 }
 
 .subtitle {
+  @include breakpoint($until: 'phone') {
+    font-size: $fs-subheader--mobile;
+  }
+
   display: flex;
   flex: 1;
   text-align: end;
   font-size: $fs-subheader;
 }
 
-
-
 // Beautiful css-shapes :)
 .halfTrapezoid {
+  @include breakpoint($until: 'phone') {
+    border-bottom: $header-height--mobile solid $color-header;
+    border-left: $trapezoid-slope-width--mobile solid transparent;
+  }
+
   border-bottom: $header-height solid $color-header;
   border-left: $trapezoid-slope-width solid transparent;
   box-sizing: border-box;
@@ -53,25 +73,39 @@
   width: 80%;
 }
 
-.triangleUp {
-  border-bottom: $triangleHeight solid $color-triangle;
-  border-left: $triangleWidth solid transparent;
-  border-right: $triangleWidth solid transparent;
-  bottom: 0;
-  height: 0;
-  left: - calc($triangleWidth * 2);
-  position: absolute;
-  top: calc($header-height - $triangleHeight);
-  width: 0;
-}
+.triangle {
+  @include breakpoint($until: 'phone') {
+    border-left: $triangle-size--mobile solid transparent;
+    border-right: $triangle-size--mobile solid transparent;
+    left: -$triangle-size--mobile * 2;
+  }
 
-.triangleDown {
-  border-left: $triangleWidth solid transparent;
-  border-right: $triangleWidth solid transparent;
-  border-top: $triangleHeight solid $color-triangle;
+  border-left: $triangle-size solid transparent;
+  border-right: $triangle-size solid transparent;
   height: 0;
-  left: - calc($triangleWidth * 2);
+  left: -$triangle-size * 2;
   position: absolute;
-  top: 0;
   width: 0;
+
+  &Down {
+    @extend .triangle;
+    @include breakpoint($until: 'phone') {
+      border-top: $triangle-size--mobile solid $color-triangle;
+    }
+
+    border-top: $triangle-size solid $color-triangle;
+    top: 0;
+  }
+
+  &Up {
+    @extend .triangle;
+    @include breakpoint($until: 'phone') {
+      border-bottom: $triangle-size--mobile solid $color-triangle;
+      top: calc($header-height--mobile - $triangle-size--mobile);
+    }
+
+    border-bottom: $triangle-size solid $color-triangle;
+    bottom: 0;
+    top: calc($header-height - $triangle-size);
+  }
 }

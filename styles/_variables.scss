@@ -19,7 +19,9 @@ $fs-xxl: $fs64;
 
 $fs-body: $fs16;
 $fs-header: $fs-xxl;
+$fs-header--mobile: $fs-xl;
 $fs-subheader: $fs-lg;
+$fs-subheader--mobile: $fs-md;
 
 // Spacings
 $space: $fs-body;
@@ -33,23 +35,26 @@ $gutter-md: $space-double;
 $gutter-lg: $space-triple;
 $gutter-xl: $space-quadruple;
 
-
 // Layout
 $main-width: 75rem; //1200px
+$section-content-padding: $gutter-sm $gutter-md;
 
 // Components
 
 //Header-shapes
 $trapezoid-slope-width: 16rem;
-$triangleHeight: 4rem;
-$triangleWidth: 4rem;
+$trapezoid-slope-width--mobile: 8rem;
+$triangle-size: 4rem;
+$triangle-size--mobile: 2rem;
 
+// Header
 $header-height: 16rem;
+$header-height--mobile: 8rem;
 $header-img-width: 30rem;
+$header-img-width--mobile: 15rem;
 $header-padding: $space-double;
 
-$section-content-padding: $gutter-sm $gutter-md;
-
+// Images
 $img-size-sm: 12.5rem;
 $img-shadow-size: $space-double;
 $img-shadow: $space-double (-$space-double) 0 $color-img-shadow;
