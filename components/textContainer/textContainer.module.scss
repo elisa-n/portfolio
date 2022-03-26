@@ -1,9 +1,7 @@
-
 .container {
   color: $color-text;
   display: flex;
   flex-direction: column;
-  margin-right: $gutter-md;
   flex: 1;
 }
 
@@ -15,6 +13,10 @@
 }
 
 .sectionTitle {
+  @include breakpoint($until: 'phone') {
+    padding-left: $section-title-padding--mobile;
+  }
+
   font-family: $font-heading;
   font-size: $fs-lg;
   height: $img-margin;

@@ -1,4 +1,13 @@
 .imageContainer {
+  @include breakpoint($until: 'phone') {
+    box-shadow: $img-shadow--mobile;
+    height: $img-size-sm--mobile;
+    width: $img-size-sm--mobile;
+    box-shadow: $img-shadow--mobile;
+    margin-right: $img-margin--mobile;
+    margin-top: $img-margin--mobile;
+  }
+
   display: flex;
   flex-shrink: 0;
   box-shadow: $img-shadow;

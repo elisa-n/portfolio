@@ -41,6 +41,11 @@ $section-content-padding: $gutter-sm $gutter-md;
 
 // Components
 
+// Content-section
+$content-section-margin-top--mobile: 8rem;
+$content-section-img-margin-top--mobile: -5rem;
+$section-title-padding--mobile: $space;
+
 //Header-shapes
 $trapezoid-slope-width: 16rem;
 $trapezoid-slope-width--mobile: 8rem;
@@ -56,6 +61,11 @@ $header-padding: $space-double;
 
 // Images
 $img-size-sm: 12.5rem;
+$img-size-sm--mobile: 8rem;
 $img-shadow-size: $space-double;
-$img-shadow: $space-double (-$space-double) 0 $color-img-shadow;
+$img-shadow-size--mobile: $space;
+$img-shadow: $img-shadow-size (-$img-shadow-size) 0 $color-img-shadow;
+$img-shadow--mobile: $img-shadow-size--mobile (-$img-shadow-size--mobile) 0
+  $color-img-shadow;
 $img-margin: $img-shadow-size;
+$img-margin--mobile: $img-shadow-size--mobile;

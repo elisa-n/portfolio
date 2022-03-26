@@ -1,11 +1,19 @@
 .container {
+  @include breakpoint($until: 'phone') {
+    margin-top: $content-section-margin-top--mobile;
+  }
+
   display: flex;
   flex-direction: row;
   margin: $gutter-md 0;
 
   .imageContainer {
-    @include breakpoint($until: 'tablet') {
+    @include breakpoint($until: 'phone') {
       position: absolute;
+      margin-top: $content-section-img-margin-top--mobile;
     }
+
+    margin-left: $gutter-md;
+    right: 0;
   }
 }
