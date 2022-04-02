@@ -1,5 +1,7 @@
 import styles from './topBar.module.scss';
 
+import ToggleButton from '../toggleButton/toggleButton';
+
 interface TopBarProps {
   animationsOn: boolean;
   animationToggle: () => void;
@@ -8,9 +10,10 @@ interface TopBarProps {
 export default function TopBar({ animationsOn, animationToggle }: TopBarProps) {
   return (
     <div className={styles.topBar}>
-      <button className={styles.animationToggle} onClick={animationToggle}>
-        Turn animations {animationsOn ? `off` : `on`}
-      </button>
+      <div className={styles.animationToggle}>
+        <span>animations {animationsOn ? `OFF` : `ON`}</span>
+        <ToggleButton onClick={animationToggle} />
+      </div>
     </div>
   );
 }

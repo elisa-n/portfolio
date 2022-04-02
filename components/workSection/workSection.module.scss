@@ -7,26 +7,29 @@
   }
 }
 
-.carousel {
+.workSection {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.carouselIndicators {
+.workSectionIndicators {
   align-items: center;
   display: flex;
   justify-content: center;
   padding: $space;
 }
 
-.carouselSlides {
+.workSectionSlides {
   display: flex;
   width: 100%;
 }
 
-.carouselTitle {
-  background-color: $c-aruba-blue;
+.workSectionTitle {
+  @include breakpoint($until: 'tablet') {
+    margin: 0;
+  }
+  background-color: $color-section-title-bg;
   color: $c-white;
   font-family: $font-heading;
   font-size: $fs-xl;
@@ -35,13 +38,20 @@
 }
 
 .contentWrapper {
+  @include breakpoint($until: 'phone') {
+    padding: 0;
+  }
+
   flex-direction: row;
   padding: $workSection-padding;
-  scroll-snap-align: start;
+  text-align: left;
   width: 100%;
 
   &Odd {
-    flex-direction: row-reverse;
+    @include breakpoint($from: 'phone') {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
   }
 }
 

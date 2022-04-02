@@ -13,7 +13,7 @@
 }
 
 .sectionTitle {
-  @include breakpoint($until: 'phone') {
+  @include breakpoint($until: 'tablet') {
     padding-left: $section-title-padding--mobile;
   }
 

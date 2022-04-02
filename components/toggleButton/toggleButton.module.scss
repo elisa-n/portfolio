@@ -1,0 +1,39 @@
+@mixin toggle {
+  align-items: center;
+  background-color: $c-white;
+  border-radius: $toggleButtonBorderRadius;
+  border: $toggleButtonBorder;
+  display: flex;
+  flex-direction: row;
+  height: $toggleButtonHeight;
+  position: relative;
+  width: $toggleButtonWidth;
+}
+
+.toggleOn {
+  @include toggle;
+  .toggleCircle {
+    background-color: $color-toggleButtonCircle;
+    left: $toggleButtonCirclePositionOn;
+  }
+}
+
+.toggleOff {
+  @include toggle;
+  .toggleCircle {
+    background-color: $c-light-grey;
+    left: 0;
+  }
+}
+
+.toggleCircle {
+  border-radius: 50%;
+  box-shadow: $toggleButtonCircleShadow;
+  box-sizing: border-box;
+  display: flex;
+  height: $toggleButtonCircleSize;
+  min-width: $toggleButtonCircleSize;
+  position: absolute;
+  transition: all 0.1s ease;
+  width: $toggleButtonCircleSize;
+}

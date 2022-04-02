@@ -10,7 +10,7 @@ interface SectionProps {
   title: string;
 }
 
-export default function CarouselSection({
+export default function WorkContent({
   img,
   alt,
   title,
@@ -20,8 +20,8 @@ export default function CarouselSection({
     <div className={styles.container}>
       <SmallImage img={img} alt={alt} />
       <div className={styles.textContainer}>
-        <h2 className={styles.carouselTitle}>{title}</h2>
-        <div className={styles.carouselContent}>
+        <h2 className={styles.workTitle}>{title}</h2>
+        <div className={styles.workContent}>
           <PortableText value={content} />
         </div>
       </div>

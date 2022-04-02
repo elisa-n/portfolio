@@ -1,13 +1,15 @@
-
-.animationToggle{
-  appearance: none;
-  border: none;
-  background-color: $color-topbar-bg;
+.animationToggle {
   color: $color-link;
+  display: flex;
+  flex-direction: row;
+  font-size: $fs-topbar;
+  justify-content: space-between;
+  min-width: $topbar-toggle-width;
 }
 
 .topBar {
+  align-items: center;
   display: flex;
   justify-content: flex-end;
-  height: 2rem;
+  padding: $topbar-padding;
 }

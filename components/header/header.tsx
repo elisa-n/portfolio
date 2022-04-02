@@ -19,7 +19,8 @@ export default function Header() {
       <header className={styles.titleContainer}>
         <h1 className={styles.title}>Elisa</h1>
         <p className={styles.subtitle}>
-          Front-end developement <br /> And cats
+          Front-end <br />
+          developement <br /> And cats
         </p>
       </header>
     </div>

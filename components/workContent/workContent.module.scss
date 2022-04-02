@@ -7,6 +7,7 @@
   flex-direction: inherit;
   gap: $content-section-gap;
   justify-content: space-between;
+  text-align: inherit;
   white-space: normal;
   width: 100%;
 
@@ -22,23 +23,27 @@
   color: $color-text;
   display: flex;
   flex-direction: column;
+  text-align: inherit;
   width: 100%;
 }
 
-.carouselContent {
+.workContent {
   background-color: $color-section-text-bg;
   font-size: $fs-body;
   line-height: 2;
   padding: $section-content-padding;
+  text-align: left;
 }
 
-.carouselTitle {
+.workTitle {
   @include breakpoint($until: 'phone') {
-    padding-left: $section-title-padding--mobile;
+    height: $section-title-height--mobile;
+    margin: -5rem $section-title-padding--mobile 0;
   }
 
   font-family: $font-heading;
   font-size: $fs-lg;
   height: $img-margin;
-  text-align: right;
+  position: relative;
+  text-align: inherit;
 }

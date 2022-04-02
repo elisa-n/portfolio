@@ -1,10 +1,7 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
 import { urlForImage } from '../../utils/sanity';
 
-import CarouselSection from '../workContent/workContent';
+import WorkContent from '../workContent/workContent';
 
-import 'aos/dist/aos.css';
 import styles from './workSection.module.scss';
 
 interface Post {
@@ -22,25 +19,17 @@ interface Post {
 
 interface SectionProps {
   posts: Post[];
-  disableAnimations: boolean;
 }
 
-export default function Carousel({ posts, disableAnimations }: SectionProps) {
-  useEffect(() => {
-    AOS.init({
-      disable: disableAnimations,
-      once: true,
-    });
-  }, [disableAnimations]);
-
+export default function WorkSection({ posts }: SectionProps) {
   const getStyles = (id: number) => {
     if (id % 2 === 0) return styles.contentWrapper;
     return `${styles.contentWrapper} ${styles.contentWrapperOdd}`;
   };
 
   return (
-    <div className={styles.carousel}>
-      <h2 className={styles.carouselTitle}>Work</h2>
+    <div className={styles.workSection}>
+      <h2 className={styles.workSectionTitle}>Work</h2>
       {posts.map((post: Post, id) => {
         return (
           <div
@@ -52,7 +41,7 @@ export default function Carousel({ posts, disableAnimations }: SectionProps) {
             data-aos-easing="ease-in"
             data-aos-duration="600"
           >
-            <CarouselSection
+            <WorkContent
               img={urlForImage(post.coverImage).url()}
               alt={`Cover image`}
               title={post.title}

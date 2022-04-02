@@ -1,12 +1,12 @@
-
 // Colors
 
-$c-aruba-blue: #81DBD5;
-$c-charleston-green: #232B2B;
-$c-desire-pink: #F1C4D4;
-$c-linnet-egg-red: #FFCCDE;
-$c-salmon-creek: #FFDDC5;
-$c-white: #FFF;
+$c-aruba-blue: #81dbd5;
+$c-charleston-green: #232b2b;
+$c-desire-pink: #f1c4d4;
+$c-light-grey: #d3d3d3;
+$c-linnet-egg-red: #ffccde;
+$c-salmon-creek: #ffddc5;
+$c-white: #fff;
 
 // Color variables
 
@@ -18,15 +18,16 @@ $color-link: $c-aruba-blue;
 
 // Layout
 $color-bg: $c-white;
-$color-bg-margins: $c-salmon-creek; 
+$color-bg-margins: $c-salmon-creek;
 $color-section-text-bg: $c-desire-pink;
 $color-footer-bg: $color-bg;
 $color-footer-separator: $c-aruba-blue;
 $color-header: $c-aruba-blue;
 $color-header-text: $c-white;
+$color-section-title-bg: $c-aruba-blue;
 $color-topbar-bg: $color-bg;
 $color-triangle: $color-bg;
 
-
 // Components
 $color-img-shadow: $c-aruba-blue;
+$color-toggleButtonBorder: $c-light-grey;

@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import AOS from 'aos';
 import Layout from '../components/layout/layout';
-import Carousel from '../components/workSection/workSection';
+import WorkSection from '../components/workSection/workSection';
 import ContentSection from '../components/contentSection/contentSection';
 import { indexQuery } from '../utils/queries';
 import { getClient, overlayDrafts } from '../utils/sanity.server';
+
+import 'aos/dist/aos.css';
 
 interface Post {
   title: string;
@@ -28,16 +31,24 @@ interface IndexProps {
 export default function Index({ allPosts, preview }: IndexProps) {
   const [disableAnimations, setAnimations] = useState(false);
 
+  useEffect(() => {
+    AOS.init({
+      disable: disableAnimations,
+      once: true,
+    });
+    AOS.refresh();
+  }, [disableAnimations]);
+
   const toggleAnimations = () => {
-    console.log(`tap`);
     setAnimations(!disableAnimations);
+    console.log(`animations disabled: ${disableAnimations}`);
   };
 
   return (
     <>
       <Layout
         preview={preview}
-        animationsOn={!disableAnimations}
+        animationsOn={disableAnimations}
         animationToggle={toggleAnimations}
       >
         <Head>
@@ -56,7 +67,7 @@ export default function Index({ allPosts, preview }: IndexProps) {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </ContentSection>
-        <Carousel posts={allPosts} disableAnimations={disableAnimations} />
+        <WorkSection posts={allPosts} />
       </Layout>
     </>
   );

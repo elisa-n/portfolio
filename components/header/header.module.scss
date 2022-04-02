@@ -27,6 +27,11 @@
 }
 
 .titleContainer {
+  @include breakpoint($until: 'phone') {
+    padding: $header-padding--mobile;
+    position: absolute;
+    right: $gutter-sm;
+  }
   align-items: flex-end;
   display: flex;
   flex-direction: column;
@@ -39,6 +44,9 @@
   @include breakpoint($until: 'phone') {
     font-size: $fs-header--mobile;
   }
+  @include breakpoint($until: 'tiny') {
+    font-size: $fs-header--tiny;
+  }
 
   display: flex;
   flex: 2;
@@ -49,6 +57,9 @@
 .subtitle {
   @include breakpoint($until: 'phone') {
     font-size: $fs-subheader--mobile;
+  }
+  @include breakpoint($until: 'tiny') {
+    font-size: $fs-subheader--tiny;
   }
 
   display: flex;
