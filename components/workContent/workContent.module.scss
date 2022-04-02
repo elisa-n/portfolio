@@ -1,0 +1,44 @@
+.container {
+  @include breakpoint($until: 'phone') {
+    margin: $content-section-margin-top--mobile 0 0;
+  }
+
+  display: inline-flex;
+  flex-direction: inherit;
+  gap: $content-section-gap;
+  justify-content: space-between;
+  white-space: normal;
+  width: 100%;
+
+  .imageContainer {
+    @include breakpoint($until: 'phone') {
+      position: absolute;
+      margin-top: $content-section-img-margin-top--mobile;
+    }
+  }
+}
+
+.textContainer {
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.carouselContent {
+  background-color: $color-section-text-bg;
+  font-size: $fs-body;
+  line-height: 2;
+  padding: $section-content-padding;
+}
+
+.carouselTitle {
+  @include breakpoint($until: 'phone') {
+    padding-left: $section-title-padding--mobile;
+  }
+
+  font-family: $font-heading;
+  font-size: $fs-lg;
+  height: $img-margin;
+  text-align: right;
+}

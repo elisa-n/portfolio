@@ -1,0 +1,55 @@
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.carouselIndicators {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: $space;
+}
+
+.carouselSlides {
+  display: flex;
+  width: 100%;
+}
+
+.carouselTitle {
+  background-color: $c-aruba-blue;
+  color: $c-white;
+  font-family: $font-heading;
+  font-size: $fs-xl;
+  padding: $space-triple;
+  text-align: center;
+}
+
+.contentWrapper {
+  flex-direction: row;
+  padding: $workSection-padding;
+  scroll-snap-align: start;
+  width: 100%;
+
+  &Odd {
+    flex-direction: row-reverse;
+  }
+}
+
+.button {
+  background-color: white;
+  border: 1px solid black;
+  width: 100px;
+  height: 30px;
+  margin: $space;
+  padding: $space;
+}

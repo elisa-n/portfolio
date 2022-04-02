@@ -11,6 +11,7 @@ const postFields = `
 
 export const indexQuery = `
 *[_type == "post"] | order(date desc, _updatedAt desc) {
+  content,
   ${postFields}
 }`;
 

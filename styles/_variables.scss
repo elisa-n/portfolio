@@ -42,8 +42,9 @@ $section-content-padding: $gutter-sm $gutter-md;
 // Components
 
 // Content-section
-$content-section-margin-top--mobile: 8rem;
+$content-section-gap: $space-double;
 $content-section-img-margin-top--mobile: -5rem;
+$content-section-margin-top--mobile: $gutter-xl;
 $section-title-padding--mobile: $space;
 
 //Header-shapes
@@ -57,7 +58,7 @@ $header-height: 16rem;
 $header-height--mobile: 8rem;
 $header-img-width: 30rem;
 $header-img-width--mobile: 15rem;
-$header-padding: $space-double;
+$header-padding: $gutter-md;
 
 // Images
 $img-size-sm: 12.5rem;
@@ -69,3 +70,6 @@ $img-shadow--mobile: $img-shadow-size--mobile (-$img-shadow-size--mobile) 0
   $color-img-shadow;
 $img-margin: $img-shadow-size;
 $img-margin--mobile: $img-shadow-size--mobile;
+
+// WorkSection
+$workSection-padding: $gutter-md $gutter-sm;

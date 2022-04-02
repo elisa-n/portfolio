@@ -5,16 +5,23 @@ import TopBar from '../topBar/topBar';
 
 import styles from './layout.module.scss';
 
-type LayoutProps = {
+interface LayoutProps {
+  animationsOn: boolean;
+  animationToggle: () => void;
   preview: boolean;
   children: any;
-};
+}
 
-export default function Layout({ preview, children }: LayoutProps) {
+export default function Layout({
+  animationToggle,
+  animationsOn,
+  preview,
+  children,
+}: LayoutProps) {
   return (
     <div className={styles.wrapper}>
       <header>
-        <TopBar />
+        <TopBar animationsOn={animationsOn} animationToggle={animationToggle} />
         <Header />
         <Meta />
       </header>

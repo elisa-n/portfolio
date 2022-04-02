@@ -1,6 +1,6 @@
 .container {
   @include breakpoint($until: 'phone') {
-    margin-top: $content-section-margin-top--mobile;
+    margin: $content-section-margin-top--mobile 0 0;
   }
 
   display: flex;

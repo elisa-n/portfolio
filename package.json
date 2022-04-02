@@ -6,11 +6,12 @@
     "start": "next start",
     "lint": "eslint --ignore-path .gitignore \"**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write"
-  },  
+  },
   "dependencies": {
     "@portabletext/react": "^1.0.3",
     "@sanity/image-url": "^1.0.1",
     "@sanity/webhook": "^1.0.2",
+    "aos": "^3.0.0-beta.6",
     "classnames": "2.3.1",
     "date-fns": "2.28.0",
     "next": "latest",
@@ -19,6 +20,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/node": "^17.0.22",
     "@types/react-dom": "^17.0.14",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
