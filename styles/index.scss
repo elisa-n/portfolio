@@ -1,11 +1,12 @@
 @import './variables.scss';
 @import './breakpoints.scss';
 
-html, body {
+html,
+body {
   background-color: $color-bg-margins;
   box-sizing: border-box;
   font-size: 16px;
-  font-family: $noto, Arial, Helvetica, sans-serif ;
+  font-family: $noto, Arial, Helvetica, sans-serif;
   height: 100%;
   margin: 0;
   width: 100%;
@@ -26,6 +27,13 @@ h1 {
 
 a {
   color: $color-link;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $c-aruba-blue;
+    letter-spacing: 2px;
+    transition: 0.1s ease-in-out;
+  }
 }
 
 p {

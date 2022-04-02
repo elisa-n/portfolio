@@ -4,9 +4,15 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
   line-height: 2;
   padding: $gutter-md $gutter-xl;
+}
+
+.someLinks {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .separator {

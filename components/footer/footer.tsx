@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <span className={styles.separator} />
-      <ul aria-label="Social media links">
+      <ul aria-label="Social media links" className={styles.someLinks}>
         <li>
           <a href="https://www.linkedin.com/in/elisanaskali/">LinkedIN</a>
         </li>
