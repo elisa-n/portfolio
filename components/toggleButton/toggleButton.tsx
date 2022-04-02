@@ -15,12 +15,14 @@ export default function ToggleButton({ onClick }: ToggleButtonProps) {
   };
 
   return (
-    <span
-      role={`button`}
+    <button
+      aria-label={`Animations ${toggleOn ? `on` : `off`}. Turn animations ${
+        toggleOn ? `off` : `on`
+      } `}
       className={toggleOn ? styles.toggleOn : styles.toggleOff}
       onClick={handleOnClick}
     >
       <span className={styles.toggleCircle} />
-    </span>
+    </button>
   );
 }

@@ -10,6 +10,9 @@ interface TopBarProps {
 export default function TopBar({ animationsOn, animationToggle }: TopBarProps) {
   return (
     <div className={styles.topBar}>
+      <a href="#main" className={styles.skipToMain}>
+        Skip to main content
+      </a>
       <div className={styles.animationToggle}>
         <span>animations {animationsOn ? `OFF` : `ON`}</span>
         <ToggleButton onClick={animationToggle} />

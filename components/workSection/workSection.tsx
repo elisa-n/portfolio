@@ -28,28 +28,31 @@ export default function WorkSection({ posts }: SectionProps) {
   };
 
   return (
-    <div className={styles.workSection}>
-      <h2 className={styles.workSectionTitle}>Work</h2>
-      {posts.map((post: Post, id) => {
-        return (
-          <div
-            className={getStyles(id)}
-            id={`${id}`}
-            key={post.slug}
-            data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-easing="ease-in"
-            data-aos-duration="600"
-          >
-            <WorkContent
-              img={urlForImage(post.coverImage).url()}
-              alt={`Cover image`}
-              title={post.title}
-              content={post.content}
-            />
-          </div>
-        );
-      })}
-    </div>
+    <section className={styles.workSection} aria-label={`Project portfolio`}>
+      <h2 className={styles.workSectionTitle}>Projects</h2>
+      <ul aria-label={`Projects`}>
+        {posts.map((post: Post, id) => {
+          return (
+            <li
+              aria-label={post.title}
+              className={getStyles(id)}
+              id={`${id}`}
+              key={post.slug}
+              data-aos="fade-up"
+              data-aos-offset="100"
+              data-aos-easing="ease-in"
+              data-aos-duration="600"
+            >
+              <WorkContent
+                img={urlForImage(post.coverImage).url()}
+                alt={`Cover image`}
+                title={post.title}
+                content={post.content}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }

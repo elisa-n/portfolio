@@ -7,8 +7,10 @@ interface ContainerProps {
 
 export default function TextContainer({ children, title }: ContainerProps) {
   return (
-    <div className={styles.container}>
-      <h2 className={styles.sectionTitle}>{title}</h2>
+    <div className={styles.container} aria-labelledby={`title`}>
+      <h3 id={`title`} className={styles.sectionTitle}>
+        {title}
+      </h3>
       <p className={styles.sectionContent}>{children}</p>
     </div>
   );

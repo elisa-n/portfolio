@@ -17,14 +17,16 @@ export default function WorkContent({
   content,
 }: SectionProps) {
   return (
-    <div className={styles.container}>
+    <article className={styles.container} aria-label={title}>
       <SmallImage img={img} alt={alt} />
       <div className={styles.textContainer}>
-        <h2 className={styles.workTitle}>{title}</h2>
+        <h3 id={`title`} className={styles.workTitle}>
+          {title}
+        </h3>
         <div className={styles.workContent}>
           <PortableText value={content} />
         </div>
       </div>
-    </div>
+    </article>
   );
 }

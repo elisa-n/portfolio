@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Meta from '../utilityComponents/meta';
@@ -21,11 +23,16 @@ export default function Layout({
   return (
     <div className={styles.wrapper}>
       <header>
+        <Head>
+          <title>Elisa</title>
+        </Head>
         <TopBar animationsOn={animationsOn} animationToggle={animationToggle} />
         <Header />
         <Meta />
       </header>
-      <main className={styles.mainContainer}>{children}</main>
+      <main id="main" className={styles.mainContainer}>
+        {children}
+      </main>
       <Footer />
     </div>
   );
