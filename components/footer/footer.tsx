@@ -1,18 +1,17 @@
+import { PortableText } from '@portabletext/react';
+import { FooterContent } from '../../utils/contentTypes';
+
 import styles from './footer.module.scss';
 
-export default function Footer() {
+interface FooterProps {
+  content: FooterContent;
+}
+
+export default function Footer({ content }: FooterProps) {
   return (
     <footer className={styles.footer}>
       <span className={styles.separator} />
-      <ul aria-label="Social media links" className={styles.someLinks}>
-        <li>
-          <a href="https://www.linkedin.com/in/elisanaskali/">LinkedIN</a>
-        </li>
-        <li>
-          <a href="https://github.com/elisa-n/">GitHub</a>
-        </li>
-      </ul>
-      Have a nice day!
+      <PortableText value={content.content} />
     </footer>
   );
 }

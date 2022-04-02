@@ -1,25 +1,23 @@
+import { PortableText } from '@portabletext/react';
+
 import TextContainer from '../textContainer/textContainer';
 import SmallImage from '../image/smallImage';
+
+import { AboutMe } from '../../utils/contentTypes';
 
 import styles from './contentSection.module.scss';
 
 interface SectionProps {
-  alt: string;
-  img: string;
-  children: any;
-  title: string;
+  content: AboutMe;
 }
 
-export default function ContentSection({
-  img,
-  alt,
-  children,
-  title,
-}: SectionProps) {
+export default function ContentSection({ content }: SectionProps) {
   return (
-    <section className={styles.container} aria-label={title}>
-      <TextContainer title={title}>{children}</TextContainer>
-      <SmallImage img={img} alt={alt} />
+    <section className={styles.container} aria-label={content.title}>
+      <TextContainer title={content.title}>
+        <PortableText value={content.content} />
+      </TextContainer>
+      <SmallImage img={content.image} alt={content.imageAlt} />
     </section>
   );
 }

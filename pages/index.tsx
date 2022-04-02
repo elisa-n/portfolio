@@ -4,30 +4,38 @@ import AOS from 'aos';
 import Layout from '../components/layout/layout';
 import WorkSection from '../components/workSection/workSection';
 import ContentSection from '../components/contentSection/contentSection';
-import { indexQuery } from '../utils/queries';
+import {
+  aboutMeQuery,
+  footerQuery,
+  headerQuery,
+  indexQuery,
+} from '../utils/queries';
 import { getClient, overlayDrafts } from '../utils/sanity.server';
+
+import {
+  AboutMe,
+  FooterContent,
+  HeaderContent,
+  Project,
+} from '../utils/contentTypes';
 
 import 'aos/dist/aos.css';
 
-interface Post {
-  title: string;
-  coverImage: any;
-  date: string;
-  author: {
-    name: string;
-    picture: any;
-  };
-  slug: string;
-  excerpt: string;
-  content: string;
-}
-
 interface IndexProps {
-  allPosts: Post[];
+  aboutMe: AboutMe[];
+  allProjects: Project[];
+  footerContent: FooterContent[];
+  headerContent: HeaderContent[];
   preview: boolean;
 }
 
-export default function Index({ allPosts, preview }: IndexProps) {
+export default function Index({
+  allProjects,
+  aboutMe,
+  headerContent,
+  footerContent,
+  preview,
+}: IndexProps) {
   const [disableAnimations, setAnimations] = useState(false);
 
   useEffect(() => {
@@ -40,39 +48,35 @@ export default function Index({ allPosts, preview }: IndexProps) {
 
   const toggleAnimations = () => {
     setAnimations(!disableAnimations);
-    console.log(`animations disabled: ${disableAnimations}`);
   };
 
   return (
     <>
       <Layout
+        footerContent={footerContent[0]}
+        headerContent={headerContent[0]}
         preview={preview}
         animationsOn={disableAnimations}
         animationToggle={toggleAnimations}
       >
-        <ContentSection
-          img="/images/profile.jpg"
-          alt="elisa"
-          title="Me, hello!"
-        >
-          Lorem <a href="https://google.com">ipsum</a> dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
-        </ContentSection>
-        <WorkSection posts={allPosts} />
+        <ContentSection content={aboutMe[0]} />
+        <WorkSection projects={allProjects} />
       </Layout>
     </>
   );
 }
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const allPosts = overlayDrafts(await getClient(preview).fetch(indexQuery));
+  const allProjects = overlayDrafts(await getClient(preview).fetch(indexQuery));
+  const aboutMe = overlayDrafts(await getClient(preview).fetch(aboutMeQuery));
+  const headerContent = overlayDrafts(
+    await getClient(preview).fetch(headerQuery),
+  );
+  const footerContent = overlayDrafts(
+    await getClient(preview).fetch(footerQuery),
+  );
+
   return {
-    props: { allPosts, preview },
+    props: { allProjects, aboutMe, headerContent, footerContent, preview },
   };
 };

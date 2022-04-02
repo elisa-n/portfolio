@@ -5,11 +5,15 @@ import Header from '../header/header';
 import Meta from '../utilityComponents/meta';
 import TopBar from '../topBar/topBar';
 
+import { FooterContent, HeaderContent } from 'utils/contentTypes';
+
 import styles from './layout.module.scss';
 
 interface LayoutProps {
   animationsOn: boolean;
   animationToggle: () => void;
+  headerContent: HeaderContent;
+  footerContent: FooterContent;
   preview: boolean;
   children: any;
 }
@@ -17,6 +21,8 @@ interface LayoutProps {
 export default function Layout({
   animationToggle,
   animationsOn,
+  headerContent,
+  footerContent,
   preview,
   children,
 }: LayoutProps) {
@@ -27,13 +33,13 @@ export default function Layout({
           <title>Elisa</title>
         </Head>
         <TopBar animationsOn={animationsOn} animationToggle={animationToggle} />
-        <Header />
+        <Header header={headerContent} />
         <Meta />
       </header>
       <main id="main" className={styles.mainContainer}>
         {children}
       </main>
-      <Footer />
+      <Footer content={footerContent} />
     </div>
   );
 }

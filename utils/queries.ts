@@ -1,29 +1,55 @@
-const postFields = `
+const projectFields = `
   _id,
   name,
   title,
-  date,
-  excerpt,
   coverImage,
   "slug": slug.current,
-  "author": author->{name, picture},
+`;
+
+const aboutMeFields = `
+  _id,
+  name,
+  title,
+  content,
+  image,
+`;
+
+const headerFields = `
+  _id,
+  image,
+  title,
+  subtitle,
 `;
 
 export const indexQuery = `
-*[_type == "post"] | order(date desc, _updatedAt desc) {
+*[_type == "project"] | order(title desc, _updatedAt desc) {
   content,
-  ${postFields}
+  ${projectFields}
 }`;
 
-export const postQuery = `
+export const aboutMeQuery = `
+*[_type == "aboutMe"] | order(title desc, _updatedAt desc) {
+  content,
+  ${aboutMeFields}
+}`;
+
+export const headerQuery = `
+*[_type == "header"] | order(title desc, _updatedAt desc) {
+  content,
+  ${headerFields}
+}`;
+
+export const footerQuery = `*[_type == "footer"]`;
+
+export const projectQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
     content,
-    ${postFields}
+    ${projectFields}
   },
   "morePosts": *[_type == "post" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
     content,
-    ${postFields}
+    ${projectFields}
   }
 }`;
 
@@ -33,6 +59,6 @@ export const postSlugsQuery = `
 
 export const postBySlugQuery = `
 *[_type == "post" && slug.current == $slug][0] {
-  ${postFields}
+  ${projectFields}
 }
 `;
