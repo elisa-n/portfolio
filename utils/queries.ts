@@ -52,13 +52,3 @@ export const projectQuery = `
     ${projectFields}
   }
 }`;
-
-export const postSlugsQuery = `
-*[_type == "post" && defined(slug.current)][].slug.current
-`;
-
-export const postBySlugQuery = `
-*[_type == "post" && slug.current == $slug][0] {
-  ${projectFields}
-}
-`;

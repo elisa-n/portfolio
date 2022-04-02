@@ -6,7 +6,7 @@
 import { createClient } from 'next-sanity';
 import { sanityConfig } from './config';
 
-interface Post {
+interface Project {
   _id: string;
   title: string;
   coverImage: any;
@@ -30,7 +30,7 @@ export const previewClient = createClient({
 export const getClient = (preview: boolean) =>
   preview ? previewClient : sanityClient;
 
-export function overlayDrafts(docs: Post[]) {
+export function overlayDrafts(docs: Project[]) {
   const documents = docs || [];
   const overlayed = documents.reduce((map, doc) => {
     if (!doc._id) {

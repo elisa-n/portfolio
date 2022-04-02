@@ -23,7 +23,6 @@ export default function Layout({
   animationsOn,
   headerContent,
   footerContent,
-  preview,
   children,
 }: LayoutProps) {
   return (
