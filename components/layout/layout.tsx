@@ -25,7 +25,7 @@ export default function Layout({
     <div className={styles.wrapper}>
       <header>
         <Head>
-          <title>Elisa</title>
+          <title>Portfolio</title>
           <link
             rel="preload"
             href="/fonts/Alata/Alata-Regular.ttf"

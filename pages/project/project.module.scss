@@ -26,8 +26,6 @@
 }
 
 .projectTitle {
-  border-bottom: 1rem solid $c-aruba-blue;
-  font-family: $font-heading;
-  font-size: $fs-lg;
+  @include section-title;
   margin-bottom: $gutter-sm;
 }

@@ -26,13 +26,20 @@ h1 {
 }
 
 a {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    $c-charleston-green 50%
+  );
+  background-size: 100% 200%;
+  background-position: right top;
   color: $color-link;
-  transition: 0.1s ease-in-out;
+  transition: 0.2s ease-in-out;
 
   &:hover {
-    color: $c-aruba-blue;
-    letter-spacing: 2px;
-    transition: 0.1s ease-in-out;
+    background-position: right bottom;
+    color: $color-link--hover;
+    transition: 0.2s ease-in-out;
   }
 }
 
