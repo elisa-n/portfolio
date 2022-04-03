@@ -1,20 +1,20 @@
 @mixin toggle {
   align-items: center;
   background-color: $c-white;
-  border-radius: $toggleButtonBorderRadius;
-  border: $toggleButtonBorder;
+  border-radius: $toggle-button-border-radius;
+  border: $toggle-button-border;
   display: flex;
   flex-direction: row;
-  height: $toggleButtonHeight;
+  height: $toggle-button-height;
   position: relative;
-  width: $toggleButtonWidth;
+  width: $toggle-button-width;
 }
 
 .toggleOn {
   @include toggle;
   .toggleCircle {
-    background-color: $color-toggleButtonCircle;
-    left: $toggleButtonCirclePositionOn;
+    background-color: $color-toggle-button-circle;
+    left: $toggle-button-circle-position--on;
   }
 }
 
@@ -28,14 +28,14 @@
 
 .toggleCircle {
   border-radius: 50%;
-  box-shadow: $toggleButtonCircleShadow;
+  box-shadow: $toggle-button-circle-shadow;
   box-sizing: border-box;
   display: flex;
-  height: $toggleButtonCircleSize;
-  min-width: $toggleButtonCircleSize;
+  height: $toggle-button-circle-size;
+  min-width: $toggle-button-circle-size;
   position: absolute;
   transition: all 0.1s ease;
-  width: $toggleButtonCircleSize;
+  width: $toggle-button-circle-size;
 
   &:hover {
     cursor: pointer;

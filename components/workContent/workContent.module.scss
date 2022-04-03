@@ -38,12 +38,12 @@
 .workTitle {
   @include breakpoint($until: 'phone') {
     height: $section-title-height--mobile;
-    margin: -5rem $workSection-title-padding--mobile 0;
+    margin: -5rem 0 0 $work-section-title-padding--mobile;
   }
 
   font-family: $font-heading;
   font-size: $fs-lg;
-  height: $img-margin;
   position: relative;
+  padding-bottom: $work-section-title-padding;
   text-align: inherit;
 }

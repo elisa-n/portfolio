@@ -90,16 +90,16 @@ $img-margin: $img-shadow-size;
 $img-margin--mobile: $img-shadow-size--mobile;
 
 // ToggleButton
-$toggleButtonBorder: 1px solid $color-toggleButtonBorder;
-$toggleButtonBorderRadius: 30px;
-$toggleButtonHeight: 0.9rem;
-$toggleButtonWidth: 2.1rem;
-$toggleButtonCircleSize: calc(1.3 * $toggleButtonHeight);
-$color-toggleButtonCircle: $c-aruba-blue;
-$toggleButtonCirclePositionOn: calc(
-  $toggleButtonWidth - $toggleButtonCircleSize
+$toggle-button-border: 1px solid $color-toggle-button-border;
+$toggle-button-border-radius: 30px;
+$toggle-button-height: 0.9rem;
+$toggle-button-width: 2.1rem;
+$toggle-button-circle-size: calc(1.3 * $toggle-button-height);
+$color-toggle-button-circle: $c-aruba-blue;
+$toggle-button-circle-position--on: calc(
+  $toggle-button-width - $toggle-button-circle-size
 );
-$toggleButtonCircleShadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+$toggle-button-circle-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
   rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
 // TopBar
@@ -107,6 +107,7 @@ $topbar-padding: $gutter-xs $gutter-sm;
 $topbar-toggle-width: 9rem;
 
 // WorkSection
-$workSection-margin-top--mobile: $gutter-xl;
-$workSection-padding: $gutter-md $gutter-sm;
-$workSection-title-padding--mobile: 10rem;
+$work-section-margin-top--mobile: $gutter-xl;
+$work-section-padding: $gutter-md $gutter-sm;
+$work-section-title-padding: $gutter-sm;
+$work-section-title-padding--mobile: 10rem;

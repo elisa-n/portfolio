@@ -1,5 +1,9 @@
 .button {
-  background-color: $color-button-bg;
+  background-color: linear-gradient(
+    to right,
+    $color-button-bg--hover,
+    $color-button-bg
+  );
   border: 2px solid $color-button-border;
   box-shadow: $button-box-shadow;
   color: $color-button-text;
