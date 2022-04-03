@@ -30,6 +30,18 @@ export default function Layout({
       <header>
         <Head>
           <title>Elisa</title>
+          <link
+            rel="preload"
+            href="/fonts/Alata/Alata-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/NotoSans/NotoSans-Light.ttf"
+            as="font"
+            crossOrigin=""
+          />
         </Head>
         <TopBar animationsOn={animationsOn} animationToggle={animationToggle} />
         <Header header={headerContent} />

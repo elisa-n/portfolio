@@ -1,4 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: 'Alata';
+  src: url('/fonts/Alata/Alata-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans/NotoSans-Light.ttf');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans/NotoSans-LightItalic.ttf');
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/fonts/NotoSans/NotoSans-Bold.ttf');
+  font-style: bold;
+  font-weight: 600;
+  font-display: swap;
+}
 
 $alata: 'Alata', sans-serif;
 $noto: 'Noto Sans', sans-serif;
