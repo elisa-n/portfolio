@@ -4,10 +4,11 @@ import styles from './toggleButton.module.scss';
 
 interface ToggleButtonProps {
   onClick: () => void;
+  isOn: boolean;
 }
 
-export default function ToggleButton({ onClick }: ToggleButtonProps) {
-  const [toggleOn, setToggleState] = useState(true);
+export default function ToggleButton({ onClick, isOn }: ToggleButtonProps) {
+  const [toggleOn, setToggleState] = useState(isOn);
 
   const handleOnClick = () => {
     setToggleState(!toggleOn);

@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { GetStaticProps } from 'next';
 import AOS from 'aos';
+import { AnimationContext } from 'context/animationContext';
 import Layout from '../components/layout/layout';
 import WorkSection from '../components/workSection/workSection';
 import ContentSection from '../components/contentSection/contentSection';
@@ -36,7 +37,7 @@ export default function Index({
   footerContent,
   preview,
 }: IndexProps) {
-  const [disableAnimations, setAnimations] = useState(false);
+  const { disableAnimations, toggleAnimations } = useContext(AnimationContext);
 
   useEffect(() => {
     AOS.init({
@@ -46,18 +47,12 @@ export default function Index({
     AOS.refresh();
   }, [disableAnimations]);
 
-  const toggleAnimations = () => {
-    setAnimations(!disableAnimations);
-  };
-
   return (
     <>
       <Layout
         footerContent={footerContent[0]}
         headerContent={headerContent[0]}
         preview={preview}
-        animationsOn={disableAnimations}
-        animationToggle={toggleAnimations}
       >
         <ContentSection content={aboutMe[0]} />
         <WorkSection projects={allProjects} />

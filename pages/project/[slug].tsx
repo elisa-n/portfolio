@@ -32,7 +32,6 @@ export default function Project({
   footerProps,
 }: ProjectProps) {
   const project = data.project.project;
-  console.log('pr', project);
 
   return (
     <Layout

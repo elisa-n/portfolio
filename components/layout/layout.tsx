@@ -10,8 +10,6 @@ import { FooterContent, HeaderContent } from 'utils/contentTypes';
 import styles from './layout.module.scss';
 
 interface LayoutProps {
-  animationsOn: boolean;
-  animationToggle: () => void;
   headerContent: HeaderContent;
   footerContent: FooterContent;
   preview: boolean;
@@ -19,8 +17,6 @@ interface LayoutProps {
 }
 
 export default function Layout({
-  animationToggle,
-  animationsOn,
   headerContent,
   footerContent,
   children,
@@ -43,7 +39,7 @@ export default function Layout({
             crossOrigin=""
           />
         </Head>
-        <TopBar animationsOn={animationsOn} animationToggle={animationToggle} />
+        <TopBar />
         <Header header={headerContent} />
         <Meta />
       </header>
