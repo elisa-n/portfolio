@@ -13,13 +13,15 @@ export default function Header({ header }: HeaderProps) {
   return (
     <div className={styles.header}>
       <div className={styles.headerImageContainer}>
-        <Image
-          src={urlForImage(header.image).url()}
-          alt="header image"
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
+        {header.image && (
+          <Image
+            src={urlForImage(header.image).url()}
+            alt="header image"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        )}
       </div>
       <span className={styles.halfTrapezoid}>
         <span className={styles.triangleDown} />

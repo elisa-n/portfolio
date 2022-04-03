@@ -11,7 +11,7 @@ export default function Footer({ content }: FooterProps) {
   return (
     <footer className={styles.footer}>
       <span className={styles.separator} />
-      <PortableText value={content.content} />
+      {content.content ? <PortableText value={content.content} /> : content}
     </footer>
   );
 }

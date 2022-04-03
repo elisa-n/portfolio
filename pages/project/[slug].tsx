@@ -1,4 +1,8 @@
 import { PortableText } from '@portabletext/react';
+import ErrorPage from 'next/error';
+
+import { useRouter } from 'next/router';
+
 import { FooterContent, HeaderContent } from 'utils/contentTypes';
 import { getClient, overlayDrafts, sanityClient } from 'utils/sanity.server';
 import {
@@ -12,43 +16,61 @@ import LinkButton from 'components/button/button';
 import Layout from '../../components/layout/layout';
 import SmallImage from 'components/image/smallImage';
 
-import styles from './project.module.scss';
-import Link from 'next/link';
+import styles from '../../styles/project.module.scss';
 
 interface ProjectProps {
-  animationsOn: boolean;
-  animationToggle: () => void;
   footerProps: FooterContent[];
   headerProps: HeaderContent[];
   preview: boolean;
   data: any;
 }
 
+const defaultHeader = {
+  image: undefined,
+  title: `Portfolio`,
+  subtitle: `Frontend Development`,
+};
+
+const defaultFooter = {
+  content: `Have a nice day`,
+};
+
 export default function Project({
-  data,
-  animationToggle,
-  animationsOn,
-  headerProps,
-  footerProps,
+  data = {},
+  headerProps = [defaultHeader],
+  footerProps = [defaultFooter],
 }: ProjectProps) {
-  const project = data.project.project;
+  const router = useRouter();
+  const slug = data?.project?.project?.slug;
+
+  if (!router.isFallback && !slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+
+  const project = data?.project?.project;
 
   return (
     <Layout
-      animationsOn={animationsOn}
-      animationToggle={animationToggle}
       headerContent={headerProps[0]}
       footerContent={footerProps[0]}
       preview={false}
     >
       <div className={styles.projectWrapper}>
-        <aside className={styles.projectSide}>
-          <SmallImage img={project?.coverImage} alt={project?.imageAlt} />
-        </aside>
-        <article id={`main`} className={styles.projectContent}>
-          <h2 className={styles.projectTitle}>{project?.title}</h2>
-          <PortableText value={project?.content} />
-        </article>
+        {router.isFallback ? (
+          <div> Loading...</div>
+        ) : (
+          <>
+            <aside className={styles.projectSide}>
+              {project.coverImage && (
+                <SmallImage img={project.coverImage} alt={project?.imageAlt} />
+              )}
+            </aside>
+            <article id={`main`} className={styles.projectContent}>
+              <h2 className={styles.projectTitle}>{project?.title}</h2>
+              <PortableText value={project?.content} />
+            </article>
+          </>
+        )}
       </div>
       <div className={styles.buttonWrapper}>
         <LinkButton target={`/`}>Return</LinkButton>

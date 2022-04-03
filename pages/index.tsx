@@ -37,7 +37,7 @@ export default function Index({
   footerContent,
   preview,
 }: IndexProps) {
-  const { disableAnimations, toggleAnimations } = useContext(AnimationContext);
+  const { disableAnimations } = useContext(AnimationContext);
 
   useEffect(() => {
     AOS.init({
