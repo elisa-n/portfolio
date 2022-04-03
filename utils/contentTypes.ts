@@ -1,6 +1,7 @@
-export interface Project {
+export interface ProjectContent {
   title: string;
   coverImage: any;
+  imageAlt: string;
   slug: string;
   content: any;
 }

@@ -22,4 +22,23 @@
   display: flex;
   justify-content: flex-end;
   padding: $topbar-padding;
+  position: relative;
+}
+
+.homeLinkWrapper {
+  align-items: center;
+  display: flex;
+  left: 0;
+  padding: 0 $gutter-sm;
+  position: absolute;
+}
+
+.homeLink {
+  font-size: $fs-sm;
+}
+
+.homeIcon {
+  color: $color-home-icon;
+  font-size: $fs-md;
+  padding-right: $home-icon-padding;
 }

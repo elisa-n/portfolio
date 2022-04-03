@@ -3,6 +3,7 @@ const projectFields = `
   name,
   title,
   coverImage,
+  imageAlt,
   "slug": slug.current,
 `;
 
@@ -43,12 +44,14 @@ export const footerQuery = `*[_type == "footer"]`;
 
 export const projectQuery = `
 {
-  "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
+  "project": *[_type == "project" && slug.current == $slug] | order(_updatedAt desc) [0] {
     content,
     ${projectFields}
   },
-  "morePosts": *[_type == "post" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
+  "moreProjects": *[_type == "project" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
     content,
     ${projectFields}
   }
 }`;
+
+export const projectSlugQuery = `*[_type == "project" && defined(slug.current)][].slug.current`;

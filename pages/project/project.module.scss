@@ -1,0 +1,33 @@
+.buttonWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.projectWrapper {
+  @include breakpoint($until: 'phone') {
+    flex-direction: column;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: $gutter-sm;
+}
+
+.projectContent {
+  flex: 3;
+  line-height: 1.5;
+  padding: $section-content-padding;
+}
+
+.projectSide {
+  flex: 1;
+  padding: $gutter-sm;
+}
+
+.projectTitle {
+  border-bottom: 1rem solid $c-aruba-blue;
+  font-family: $font-heading;
+  font-size: $fs-lg;
+  margin-bottom: $gutter-sm;
+}

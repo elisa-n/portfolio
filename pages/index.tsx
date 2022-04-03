@@ -16,14 +16,14 @@ import {
   AboutMe,
   FooterContent,
   HeaderContent,
-  Project,
+  ProjectContent,
 } from '../utils/contentTypes';
 
 import 'aos/dist/aos.css';
 
 interface IndexProps {
   aboutMe: AboutMe[];
-  allProjects: Project[];
+  allProjects: ProjectContent[];
   footerContent: FooterContent[];
   headerContent: HeaderContent[];
   preview: boolean;

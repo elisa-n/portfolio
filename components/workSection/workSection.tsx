@@ -1,12 +1,12 @@
 import LinkButton from '../button/button';
 import WorkContent from '../workContent/workContent';
 
-import { Project } from '../../utils/contentTypes';
+import { ProjectContent } from '../../utils/contentTypes';
 
 import styles from './workSection.module.scss';
 
 interface SectionProps {
-  projects: Project[];
+  projects: ProjectContent[];
 }
 
 export default function WorkSection({ projects }: SectionProps) {
@@ -19,7 +19,7 @@ export default function WorkSection({ projects }: SectionProps) {
     <section className={styles.workSection} aria-label={`Project portfolio`}>
       <h2 className={styles.workSectionTitle}>Projects</h2>
       <ul aria-label={`Projects`}>
-        {projects.map((project: Project, id) => {
+        {projects.map((project: ProjectContent, id) => {
           return (
             <li
               aria-label={project.title}
@@ -37,9 +37,11 @@ export default function WorkSection({ projects }: SectionProps) {
                 title={project.title}
                 content={project.content}
               />
-              <LinkButton target={`/projects/${project.slug}`}>
-                Read more
-              </LinkButton>
+              <div className={styles.buttonWrapper}>
+                <LinkButton target={`/project/${project.slug}`}>
+                  Read more
+                </LinkButton>
+              </div>
             </li>
           );
         })}
