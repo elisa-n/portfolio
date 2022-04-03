@@ -1,9 +1,11 @@
 .button {
-  background-color: linear-gradient(
+  background: linear-gradient(
     to right,
-    $color-button-bg--hover,
-    $color-button-bg
+    $color-button-bg--hover 50%,
+    $color-button-bg 50%
   );
+  background-size: 200% 100%;
+  background-position: right bottom;
   border: 2px solid $color-button-border;
   box-shadow: $button-box-shadow;
   color: $color-button-text;
@@ -14,11 +16,12 @@
   text-align: center;
   text-transform: uppercase;
   width: $button-width;
+  transition: all 0.4s ease-out;
 
   &:hover {
-    background-color: $color-button-bg--hover;
+    background-position: left bottom;
     color: $c-bayou;
-    transition: 0.2s ease-in-out;
+    transition: 0.4s ease-in-out;
     letter-spacing: normal;
   }
 
