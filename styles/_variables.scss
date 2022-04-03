@@ -41,9 +41,17 @@ $gutter-xl: $space-quadruple;
 
 // Layout
 $main-width: 75rem; //1200px
+$main-min-width: 19rem; //304px
 $section-content-padding: $gutter-sm $gutter-md;
 
 // Components
+
+// Button
+$button-shadow-offset: 6px;
+$button-box-shadow: $button-shadow-offset $button-shadow-offset 0
+  $color-button-shadow;
+$button-height: 3rem;
+$button-width: 8rem;
 
 // Content-section
 $content-section-gap: $space-double;
@@ -51,7 +59,7 @@ $content-section-content-margin: $gutter-md 0 $gutter-md 0;
 $content-section-content-margin--mobile: 8rem 0 $gutter-md 0;
 $content-section-img-margin-top--mobile: -5rem;
 $content-section-margin-top--mobile: 8rem;
-$section-title-padding--mobile: 10rem;
+$section-title-padding--mobile: $gutter-sm;
 $section-title-height--mobile: 7rem;
 
 //Header-shapes
@@ -67,6 +75,8 @@ $header-img-width: 30rem;
 $header-img-width--mobile: 15rem;
 $header-padding: $gutter-md $gutter-md;
 $header-padding--mobile: $gutter-sm 0;
+$titleContainer-max-width: 20rem;
+$titleContainer-max-width--mobile: 8rem;
 
 // Images
 $img-size-sm: 12.5rem;
@@ -97,5 +107,6 @@ $topbar-padding: $gutter-xs $gutter-sm;
 $topbar-toggle-width: 9rem;
 
 // WorkSection
-$work-section-margin-top--mobile: $gutter-xl;
+$workSection-margin-top--mobile: $gutter-xl;
 $workSection-padding: $gutter-md $gutter-sm;
+$workSection-title-padding--mobile: 10rem;

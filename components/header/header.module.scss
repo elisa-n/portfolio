@@ -28,15 +28,20 @@
 
 .titleContainer {
   @include breakpoint($until: 'phone') {
+    max-width: $titleContainer-max-width--mobile;
     padding: $header-padding--mobile;
     position: absolute;
     right: $gutter-sm;
   }
+
   align-items: flex-end;
   display: flex;
   flex-direction: column;
   font-family: $font-heading;
+  max-width: $titleContainer-max-width;
   padding: $header-padding;
+  position: absolute;
+  right: 0;
   z-index: 1;
 }
 

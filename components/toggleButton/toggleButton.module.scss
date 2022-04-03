@@ -36,4 +36,8 @@
   position: absolute;
   transition: all 0.1s ease;
   width: $toggleButtonCircleSize;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

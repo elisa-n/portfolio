@@ -6,6 +6,7 @@ $c-charleston-green: #232b2b;
 $c-desire-pink: #f1c4d4;
 $c-light-grey: #d3d3d3;
 $c-linnet-egg-red: #ffccde;
+$c-powderpuff: #ffedf3;
 $c-salmon-creek: #ffddc5;
 $c-white: #fff;
 
@@ -30,5 +31,11 @@ $color-topbar-bg: $color-bg;
 $color-triangle: $color-bg;
 
 // Components
+$color-button-bg: $c-white;
+$color-button-bg--hover: $c-powderpuff;
+$color-button-border: $c-aruba-blue;
+$color-button-shadow: $c-salmon-creek;
+$color-button-text: $c-aruba-blue;
+
 $color-img-shadow: $c-aruba-blue;
 $color-toggleButtonBorder: $c-light-grey;

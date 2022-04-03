@@ -3,10 +3,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-
-  a {
-    color: white;
-  }
+  width: 100%;
 }
 
 .sectionContent {
@@ -17,6 +14,13 @@
 }
 
 .sectionTitle {
+  @include breakpoint($until: 'tiny') {
+    font-size: $fs-md;
+  }
+  @include breakpoint($until: 'phone') {
+    height: $section-title-height--mobile;
+    margin: -5rem $workSection-title-padding--mobile 0;
+  }
   @include breakpoint($until: 'tablet') {
     padding-left: $section-title-padding--mobile;
   }

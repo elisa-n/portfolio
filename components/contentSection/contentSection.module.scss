@@ -9,8 +9,10 @@
 
   .imageContainer {
     @include breakpoint($until: 'phone') {
-      position: absolute;
+      left: 0;
+      margin-left: 0;
       margin-top: $content-section-img-margin-top--mobile;
+      position: absolute;
     }
 
     margin-left: $gutter-md;

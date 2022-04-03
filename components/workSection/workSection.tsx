@@ -1,3 +1,4 @@
+import LinkButton from '../button/button';
 import WorkContent from '../workContent/workContent';
 
 import { Project } from '../../utils/contentTypes';
@@ -36,6 +37,9 @@ export default function WorkSection({ projects }: SectionProps) {
                 title={project.title}
                 content={project.content}
               />
+              <LinkButton target={`/projects/${project.slug}`}>
+                Read more
+              </LinkButton>
             </li>
           );
         })}

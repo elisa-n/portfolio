@@ -1,0 +1,26 @@
+.button {
+  background-color: $color-button-bg;
+  border: 2px solid $color-button-border;
+  box-shadow: $button-box-shadow;
+  color: $color-button-text;
+  display: inline-block;
+  font-weight: bold;
+  height: $button-height;
+  line-height: $button-height;
+  text-align: center;
+  text-transform: uppercase;
+  width: $button-width;
+
+  &:hover {
+    background-color: $color-button-bg--hover;
+    color: $c-bayou;
+    transition: 0.2s ease-in-out;
+    letter-spacing: normal;
+  }
+
+  &:active {
+    transform: translate($button-shadow-offset, $button-shadow-offset);
+    transition: 0.2s ease-in-out;
+    box-shadow: none;
+  }
+}
