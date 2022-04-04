@@ -14,11 +14,11 @@ export default function LinkButton({
   children,
 }: ButtonProps) {
   return (
-    <Link href={target} passHref>
-      <p>
+    <Link href={target} passHref={true}>
+      <a className={`${styles.button} ${styles.visible}`}>
         <span className={styles.visuallyHidden}>{helptext}</span>
-        <a className={`${styles.button} ${styles.visible}`}>{children}</a>
-      </p>
+        {children}
+      </a>
     </Link>
   );
 }
