@@ -73,7 +73,9 @@ export default function Project({
         )}
       </div>
       <div className={styles.buttonWrapper}>
-        <LinkButton target={`/`}>Return</LinkButton>
+        <LinkButton helptext={`Back to main page`} target={`/`}>
+          Return
+        </LinkButton>
       </div>
     </Layout>
   );

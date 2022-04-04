@@ -20,7 +20,7 @@ export default function WorkContent({
     <article className={styles.container} aria-label={title}>
       <SmallImage img={img} alt={alt} />
       <div className={styles.textContainer}>
-        <h3 id={`title`} className={styles.workTitle}>
+        <h3 id={title} className={styles.workTitle}>
           {title}
         </h3>
         <div className={styles.workContent}>

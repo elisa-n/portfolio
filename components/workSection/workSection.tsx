@@ -38,7 +38,10 @@ export default function WorkSection({ projects }: SectionProps) {
                 content={project.content}
               />
               <div className={styles.buttonWrapper}>
-                <LinkButton target={`/project/${project.slug}`}>
+                <LinkButton
+                  helptext={`Click to read more about ${project.title}`}
+                  target={`/project/${project.slug}`}
+                >
                   Read more
                 </LinkButton>
               </div>

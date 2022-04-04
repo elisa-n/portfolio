@@ -13,6 +13,7 @@ const aboutMeFields = `
   title,
   content,
   image,
+  imageAlt,
 `;
 
 const headerFields = `

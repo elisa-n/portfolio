@@ -8,9 +8,9 @@ interface ContainerProps {
 export default function TextContainer({ children, title }: ContainerProps) {
   return (
     <div className={styles.container} aria-labelledby={`title`}>
-      <h3 id={`title`} className={styles.sectionTitle}>
+      <h2 id={title} className={styles.sectionTitle}>
         {title}
-      </h3>
+      </h2>
       <span className={styles.sectionContent}>{children}</span>
     </div>
   );

@@ -1,4 +1,6 @@
-var path = require('path');
+const path = require('path');
+const withPWA = require('next-pwa');
+
 /**
  * @type {import('next').NextConfig}
  **/
@@ -10,5 +12,10 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
     prependData: `@import "_variables.scss";`,
   },
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+  },
 };
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);
